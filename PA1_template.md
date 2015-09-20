@@ -60,14 +60,14 @@ Finally, the mean of total daily steps is 1.0766189\times 10^{4} and the median 
 To calculate average daily activity pattern, first we average number of steps taken in particulat interval for each day. 
 
 ```r
-steps_by_interval<-tapply(data$steps,data$interval,mean,na.rm=TRUE)
+steps_by_interval <- tapply(data$steps,data$interval,mean,na.rm = TRUE)
 ```
 
 The following plot illustrates distribution of dayly activity across five-minute intervals:
 
 ```r
 plot (steps_by_interval, 
-     type="l",
+     type ="l",
      xlab = "5-minute interval",
      ylab = "Average number of steps",
      main = "Average daily activity pattern")
@@ -78,7 +78,7 @@ plot (steps_by_interval,
 Interval with the maximum number of steps taken on average is calculated using the following code:
 
 ```r
-steps_by_interval[max(steps_by_interval)]
+steps_by_interval [max(steps_by_interval)]
 ```
 
 ```
@@ -91,7 +91,7 @@ steps_by_interval[max(steps_by_interval)]
 At first we found the number of missing values in the dataset with the following code:
 
 ```r
-tNA <- sum(is.na(data$steps))
+tNA <- sum (is.na (data$steps))
 ```
 The total number of missing values in the dataset is 2304.
 
@@ -155,4 +155,5 @@ xyplot (data$steps ~ data$interval | as.factor(data$day), data=data, pch=1, xlab
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-12-1.png) 
+
 It is evident that there is considerably more movement in earlier interval on weekdays, while in the weekend, later intervals show more steps taken.

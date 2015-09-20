@@ -42,13 +42,13 @@ Finally, the mean of total daily steps is `r steps_per_day_mean` and the median 
 
 To calculate average daily activity pattern, first we average number of steps taken in particulat interval for each day. 
 ```{r}
-steps_by_interval<-tapply(data$steps,data$interval,mean,na.rm=TRUE)
+steps_by_interval <- tapply(data$steps,data$interval,mean,na.rm = TRUE)
 ```
 
 The following plot illustrates distribution of dayly activity across five-minute intervals:
 ```{r}
 plot (steps_by_interval, 
-     type="l",
+     type ="l",
      xlab = "5-minute interval",
      ylab = "Average number of steps",
      main = "Average daily activity pattern")
@@ -56,14 +56,14 @@ plot (steps_by_interval,
 
 Interval with the maximum number of steps taken on average is calculated using the following code:
 ```{r}
-steps_by_interval[max(steps_by_interval)]
+steps_by_interval [max(steps_by_interval)]
 ```
 
 ## Imputing missing values
 
 At first we found the number of missing values in the dataset with the following code:
 ```{r}
-tNA <- sum(is.na(data$steps))
+tNA <- sum (is.na (data$steps))
 ```
 The total number of missing values in the dataset is `r tNA`.
 
