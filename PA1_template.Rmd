@@ -10,7 +10,7 @@ output:
 At the beginning we need to unzip and read the data provided for analysis and transform them into appropriate formats
 ```{r echo=TRUE}
 filename <- "activity.zip"
-data <- read.csv (unzip (filename), na.strings="NA")
+data <- read.csv (unzip (filename), na.strings = "NA")
 data$date <- as.Date(data$date)
 ```
 
@@ -96,7 +96,7 @@ The new mean is `r new_mean` and median is `r new_median`. As a result of substi
 
 ## Are there differences in activity patterns between weekdays and weekends?
 
-In order to look at the differences between weekdays and weekends, we first need to set the system language settings to English and add a new coloumn that identifies whether a given date falls on a weekend or a weekend.
+In order to look at the differences between weekdays and weekends, we first need to set the system language settings to English and add a new coloumn that identifies whether a given date falls on a weekday or a weekend.
 ```{r}
 Sys.setlocale ("LC_ALL", "C")
 data$day <- as.factor (ifelse (weekdays (data$date) %in% c ("Saturday","Sunday"), "Weekend", "Weekday"))
